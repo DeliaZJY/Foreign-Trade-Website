@@ -472,32 +472,36 @@ font-weight: bold;
 
 <style>
 .collection-tabs {
-  padding: 40px 20px;
+  padding: 40px 4%;
+  background-color: #f8f5ed; /* 米底色，不需要就删掉此行 */
 }
+/* FEATURED COLLECTIONS 居中 */
 .collection-tabs small {
   display: block;
+  text-align: center;
   font-size: 14px;
   letter-spacing: 2px;
   color: #666;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
-.collection-tabs div {
+/* 下方3个标签横向均分铺满整行 */
+.collection-tabs > div {
   display: flex;
-  gap: 32px;
+  justify-content: space-evenly;
 }
 .collection-tabs a {
-  font-size: 18px;
+  font-size: 48px;
   font-weight: 600;
   color: #000;
   text-decoration: none;
-  transition: 0.2s;
+  transition: 0.25s ease;
 }
+/* 鼠标悬浮变黄 */
 .collection-tabs a:hover {
-  color: #ffcc00; /* 悬浮黄色 */
+  color: #ffcc00;
 }
 </style>
 
-<!-- 你原来的HTML代码 -->
 <section class="collection-tabs">
   <small>FEATURED COLLECTIONS</small>
   <div>
