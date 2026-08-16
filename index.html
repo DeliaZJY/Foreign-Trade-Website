@@ -470,20 +470,31 @@ font-weight: bold;
         MATURE LOGISTICS SYSTEM<br>We provide reliable delivery of cargo and we have more than 10 years experience in logistics.
     </section>
 
-   <style>
-.collection-tabs a {
-  text-decoration: none;
-}
-</style>
-
 <section class="collection-tabs">
 <small>FEATURED COLLECTIONS</small>
 <div>
-<a href="#" class="active">STRENGTHS</a>
-<a href="#" class="active">PARTNER BRANDS</a>
-<a href="#" class="active">OTHERS</a>
+<a href="#" >STRENGTHS</a>
+<a href="#" >PARTNER BRANDS</a>
+<a href="#" >OTHERS</a>
 </div>
 </section>
+    .collection-tabs small {
+  display: block;
+  margin-bottom: 12px;
+  color: #888;
+  letter-spacing: 1px;
+}
+.collection-tabs div a {
+  margin: 0 16px;
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+/* 悬浮变黄 */
+.collection-tabs div a:hover {
+  color: #fada54;
+}
     
     <div class="container product-row">
         <div class="row g-4">
