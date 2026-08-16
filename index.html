@@ -470,31 +470,42 @@ font-weight: bold;
         MATURE LOGISTICS SYSTEM<br>We provide reliable delivery of cargo and we have more than 10 years experience in logistics.
     </section>
 
-<section class="collection-tabs">
-<small>FEATURED COLLECTIONS</small>
-<div>
-<a href="#" >STRENGTHS</a>
-<a href="#" >PARTNER BRANDS</a>
-<a href="#" >OTHERS</a>
-</div>
-</section>
-    .collection-tabs small {
+<style>
+.collection-tabs {
+  padding: 40px 20px;
+}
+.collection-tabs small {
   display: block;
-  margin-bottom: 12px;
-  color: #888;
-  letter-spacing: 1px;
-}
-.collection-tabs div a {
-  margin: 0 16px;
-  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 2px;
   color: #666;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  margin-bottom: 16px;
 }
-/* 悬浮变黄 */
-.collection-tabs div a:hover {
-  color: #fada54;
+.collection-tabs div {
+  display: flex;
+  gap: 32px;
 }
+.collection-tabs a {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.collection-tabs a:hover {
+  color: #ffcc00; /* 悬浮黄色 */
+}
+</style>
+
+<!-- 你原来的HTML代码 -->
+<section class="collection-tabs">
+  <small>FEATURED COLLECTIONS</small>
+  <div>
+    <a href="#">STRENGTHS</a>
+    <a href="#">PARTNER BRANDS</a>
+    <a href="#">OTHERS</a>
+  </div>
+</section>
     
     <div class="container product-row">
         <div class="row g-4">
