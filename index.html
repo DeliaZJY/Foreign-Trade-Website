@@ -211,16 +211,23 @@
             font-weight: 600;
         }
         .viewall-btn {
-            display: block;
-            width: fit-content;
-            margin: 10px auto 50px;
-            background-color: var(--yellow);
-            color: #fff;
-            border: none;
-            padding: 9px 32px;
-            font-size: 13px;
-            letter-spacing: 0.4px;
-            text-decoration: underline;
+display: block;
+width: fit-content;
+margin: 10px auto 50px;
+background-color: var(--yellow);
+color: #fff;
+border: none;
+padding: 9px 32px;
+font-size: 13px;
+letter-spacing: 0.4px;
+text-decoration: underline;
+text-underline-offset: 4px;
+text-decoration-thickness: 1px;
+transition: color 0.2s ease; /* 顺滑过渡，外贸站质感更好 */
+}
+/* 鼠标按下点击时触发 */
+.viewall-btn:active {
+color: #8B5A2B; /* 棕色，可自行替换色值 */
         }
 
         .bestsell-title {
