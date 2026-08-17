@@ -77,6 +77,28 @@
             color: var(--yellow);
         }
 
+        /* ========== 移动端汉堡菜单 ========== */
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .mobile-nav {
+            display: none;
+            width: 100%;
+            padding:16px;
+            border-top:1px solid rgba(90, 99, 75, 0.1);
+            flex-direction:column;
+            gap:14px;
+        }
+        .mobile-nav a {
+            text-transform: uppercase;
+            font-size:14px;
+        }
+        .mobile-nav.show {
+            display:flex;
+        }
+
         /* 横幅轮播整体高度 */
         .hero-carousel {
             height: 72vh;
@@ -211,21 +233,20 @@
             font-weight: 600;
         }
         .viewall-btn {
-display: block;
-width: fit-content;
-margin: 10px auto 50px;
-background-color: var(--yellow);
-color: #fff;
-border: none;
-padding: 9px 32px;
-font-size: 13px;
-letter-spacing: 0.4px;
-transition: all 0.2s ease; /* 平滑过渡颜色、字重 */
-}
-
-.viewall-btn:hover {
-color: #8B5A2B;
-font-weight: bold;
+            display: block;
+            width: fit-content;
+            margin: 10px auto 50px;
+            background-color: var(--yellow);
+            color: #fff;
+            border: none;
+            padding: 9px 32px;
+            font-size: 13px;
+            letter-spacing: 0.4px;
+            transition: all 0.2s ease;
+        }
+        .viewall-btn:hover {
+            color: #8B5A2B;
+            font-weight: bold;
         }
 
         .bestsell-title {
@@ -360,18 +381,63 @@ font-weight: bold;
             font-size:11px;
             opacity:0.7;
         }
-        @media(max-width:768px){
-            .footer-container{
-                grid-template-columns: 1fr;
-            }
-        }
         /* ===================================================================== */
 
-        /* 移动端适配 */
-        @media (max-width:768px) {
+        /* ====== 分类板块样式 ====== */
+        .collection-tabs {
+          padding: 40px 4%;
+          background-color: #f8f5ed;
+        }
+        .collection-tabs small {
+          display: block;
+          text-align: center;
+          font-size: 14px;
+          letter-spacing: 2px;
+          color: #666;
+          margin-bottom: 32px;
+        }
+        .collection-tabs > div {
+          display: flex;
+          justify-content: space-evenly;
+        }
+        .collection-tabs a {
+          font-size: 24px;
+          font-weight: 600;
+          color: #000;
+          text-decoration: none;
+          transition: 0.25s ease;
+        }
+        .collection-tabs a:hover {
+          color: #ffcc00;
+        }
+
+        /* ====== 页脚CATALOG按钮（修复溢出） ====== */
+        .follow-btn {
+          background: #f390a3;
+          color: #ffffff;
+          border: none;
+          border-radius: 24px;
+          padding: 12px 30px;
+          font-size:16px;
+          font-weight:500;
+          cursor:pointer;
+          white-space:nowrap;
+        }
+        .follow-btn:hover {
+          opacity:0.9;
+        }
+
+        /* ====================== 【移动端统一适配】 ====================== */
+        @media (max-width:768px){
+            /* 导航：隐藏桌面菜单，显示汉堡 */
             .nav-menu {
-                display: none;
+                display: none !important;
             }
+            .hamburger {
+                display: block;
+            }
+
+            /* 轮播高度 */
             .hero-carousel,
             .hero-carousel .carousel-item {
                 height: 60vh;
@@ -383,6 +449,50 @@ font-weight: bold;
                 width: 48px;
                 height: 48px;
                 font-size: 24px;
+                right:16px;
+                bottom:16px;
+            }
+
+            /* 页脚改成单列 */
+            .footer-container{
+                grid-template-columns: 1fr;
+            }
+
+            /* 分类标签：缩小字体、换行 */
+            .collection-tabs > div {
+                flex-wrap: wrap;
+                gap:16px;
+            }
+            .collection-tabs a {
+                font-size:18px;
+                margin:0 8px;
+            }
+
+            /* 产品图片高度自适应，防止过高 */
+            .product-img {
+                height:220px;
+            }
+
+            /* 询价弹窗左右留边 */
+            .modal-dialog {
+                margin: 16px;
+            }
+        }
+
+        @media (max-width:480px){
+            /* 超小手机进一步压缩 */
+            .carousel-content h2 {
+                font-size:18px;
+            }
+            .shopnow-btn {
+                padding:7px 20px;
+                font-size:12px;
+            }
+            .product-img {
+                height:200px;
+            }
+            .collection-tabs a {
+                font-size:16px;
             }
         }
     </style>
@@ -396,6 +506,7 @@ font-weight: bold;
     <header class="header-nav">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="logo-text">BIG LAZY</div>
+            <!-- 桌面导航 -->
             <div class="nav-menu d-none d-md-block">
                 <a href="#">NEW</a>
                 <a href="#">DAILY GROCERIES</a>
@@ -406,11 +517,26 @@ font-weight: bold;
                 <a href="#">ABOUT US</a>
                 <a href="#">CONTACT US</a>
             </div>
+            <!-- 汉堡图标 -->
+            <div class="hamburger d-md-none">
+                <i class="bi bi-list"></i>
+            </div>
             <div class="header-icons">
                 <span><i class="bi bi-person"></i></span>
                 <span><i class="bi bi-search"></i></span>
                 <span><i class="bi bi-bag"></i> <small>0</small></span>
             </div>
+        </div>
+        <!-- 移动端下拉菜单 -->
+        <div class="container mobile-nav">
+            <a href="#">NEW</a>
+            <a href="#">DAILY GROCERIES</a>
+            <a href="#">KITCHENWARE</a>
+            <a href="#">GIFTS</a>
+            <a href="#">TOYS</a>
+            <a href="#">ALL PRODUCTS</a>
+            <a href="#">ABOUT US</a>
+            <a href="#">CONTACT US</a>
         </div>
     </header>
 
@@ -469,38 +595,6 @@ font-weight: bold;
         <i class="bi bi-truck mb-2 d-block"></i>
         MATURE LOGISTICS SYSTEM<br>We provide reliable delivery of cargo and we have more than 10 years experience in logistics.
     </section>
-
-<style>
-.collection-tabs {
-  padding: 40px 4%;
-  background-color: #f8f5ed; /* 米底色，不需要就删掉此行 */
-}
-/* FEATURED COLLECTIONS 居中 */
-.collection-tabs small {
-  display: block;
-  text-align: center;
-  font-size: 14px;
-  letter-spacing: 2px;
-  color: #666;
-  margin-bottom: 32px;
-}
-/* 下方3个标签横向均分铺满整行 */
-.collection-tabs > div {
-  display: flex;
-  justify-content: space-evenly;
-}
-.collection-tabs a {
-  font-size: 24px;
-  font-weight: 600;
-  color: #000;
-  text-decoration: none;
-  transition: 0.25s ease;
-}
-/* 鼠标悬浮变黄 */
-.collection-tabs a:hover {
-  color: #ffcc00;
-}
-</style>
 
 <section class="collection-tabs">
   <small>FEATURED COLLECTIONS</small>
@@ -658,22 +752,6 @@ Flexible-MOQ OEM/ODM customization and worldwide shipping available.</p>
                 <a href="替换成你的PDF在线链接" target="_blank" rel="noopener noreferrer">
   <button class="follow-btn">OUR CATALOG</button>
 </a>
-
-<style>
-.follow-btn {
-  background: #f390a3;
-  color: #ffffff;
-  border: none;
-  border-radius: 24px;
-  padding: 20px 80px;
-  font-size:40px;
-  font-weight:500;
-  cursor:pointer;
-}
-.follow-btn:hover {
-  opacity:0.9;
-}
-</style>
                 <div class="social-icons">
     <a href="https://www.linkedin.com/in/delia-zhang-790a32342/"><i class="bi bi-linkedin"></i></a>
     <a href="https://www.facebook.com/people/Delia-Zhang/61571027962734/"><i class="bi bi-facebook"></i></a>
@@ -707,7 +785,19 @@ Flexible-MOQ OEM/ODM customization and worldwide shipping available.</p>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // 修复变量拼写错误
+        // 汉堡菜单切换
+        const hamburger = document.querySelector('.hamburger');
+        const mobileNav = document.querySelector('.mobile-nav');
+        hamburger.addEventListener('click', ()=>{
+            mobileNav.classList.toggle('show');
+        })
+        // 移动端点击导航链接自动收起菜单
+        mobileNav.querySelectorAll('a').forEach(link=>{
+            link.addEventListener('click',()=>{
+                mobileNav.classList.remove('show');
+            })
+        })
+
         const inquireModal = new bootstrap.Modal(document.getElementById('inquireModal'));
         const productItems = document.querySelectorAll('.product-item');
         const prodNameInput = document.getElementById('prodName');
