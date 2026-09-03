@@ -595,36 +595,44 @@
         <i class="bi bi-truck mb-2 d-block"></i>
         MATURE LOGISTICS SYSTEM<br>We provide reliable delivery of cargo and we have more than 10 years experience in logistics.
     </section>
-<section class="category-section py-5 bg-light">
+<section class="category-section py-5">
   <div class="container">
     <div class="row g-4">
       <!-- Daily Groceries -->
       <div class="col-6 col-md-3 text-center">
-        <div class="category-img-wrap mb-3">
-          <img src="Daily Groceries.jpg" alt="Daily Groceries" class="category-img">
-        </div>
-        <h4 class="category-title">Daily Groceries</h4>
+        <a href="/category/daily-groceries" class="category-link text-decoration-none">
+          <div class="category-img-wrap mb-3">
+            <img src="Daily Groceries.jpg" alt="Daily Groceries" class="category-img">
+          </div>
+          <h4 class="category-title">Daily Groceries</h4>
+        </a>
       </div>
       <!-- Kitchenware -->
       <div class="col-6 col-md-3 text-center">
-        <div class="category-img-wrap mb-3">
-          <img src="Kitchenware.jpg" alt="Kitchenware" class="category-img">
-        </div>
-        <h4 class="category-title">Kitchenware</h4>
+        <a href="/category/kitchenware" class="category-link text-decoration-none">
+          <div class="category-img-wrap mb-3">
+            <img src="Kitchenware.jpg" alt="Kitchenware" class="category-img">
+          </div>
+          <h4 class="category-title">Kitchenware</h4>
+        </a>
       </div>
-      <!-- Festivals & Gifts -->
+      <!-- Festivals & Gifts 注意：文件名不要带&符号，建议改为 Festivals-Gifts.jpg -->
       <div class="col-6 col-md-3 text-center">
-        <div class="category-img-wrap mb-3">
-          <img src="Festivals&Gifts.jpg" alt="Festivals & Gifts" class="category-img">
-        </div>
-        <h4 class="category-title">Festivals & Gifts</h4>
+        <a href="/category/festivals-gifts" class="category-link text-decoration-none">
+          <div class="category-img-wrap mb-3">
+            <img src="Festivals-Gifts.jpg" alt="Festivals & Gifts" class="category-img">
+          </div>
+          <h4 class="category-title">Festivals & Gifts</h4>
+        </a>
       </div>
       <!-- Toys -->
       <div class="col-6 col-md-3 text-center">
-        <div class="category-img-wrap mb-3">
-          <img src="Toys.jpg" alt="Toys" class="category-img">
-        </div>
-        <h4 class="category-title">Toys</h4>
+        <a href="/category/toys" class="category-link text-decoration-none">
+          <div class="category-img-wrap mb-3">
+            <img src="Toys.jpg" alt="Toys" class="category-img">
+          </div>
+          <h4 class="category-title">Toys</h4>
+        </a>
       </div>
     </div>
   </div>
@@ -632,12 +640,16 @@
 
 <style>
 .category-section {
-  background-color: #f8f3e9; /* 匹配图中米白底色 */
+  background-color: #f8f3e9; /* 米奶油底色 */
 }
 .category-img-wrap {
   overflow: hidden;
-  border-radius: 45%; /* 椭圆圆角，控制这个数值调整弧度 */
+  border-radius: 42%; /* 椭圆圆角，42%更还原截图的扁椭圆 */
   aspect-ratio: 1.4 / 1;
+  transition: transform 0.3s ease;
+}
+.category-img-wrap:hover {
+  transform: scale(1.05); /* 鼠标悬浮轻微放大 */
 }
 .category-img {
   width: 100%;
@@ -648,6 +660,11 @@
   color: #554b42;
   font-weight: 500;
   letter-spacing: 1px;
+  margin-top: 0.75rem;
+  transition: color 0.2s;
+}
+.category-link:hover .category-title {
+  color: #c49847; /* hover文字变色，适配网站暖黄风格 */
 }
 </style>
         <button class="viewall-btn">VIEW ALL</button>
