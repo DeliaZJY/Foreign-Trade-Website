@@ -602,7 +602,7 @@
       <div class="col-6 col-md-3 text-center">
         <a href="/category/daily-groceries" class="category-link text-decoration-none">
           <div class="category-img-wrap mb-3">
-            <img src="Daily Groceries.jpg" alt="Daily Groceries" class="category-img">
+            <img src="daily-groceries.jpg" alt="Daily Groceries" class="category-img">
           </div>
           <h4 class="category-title">Daily Groceries</h4>
         </a>
@@ -611,16 +611,16 @@
       <div class="col-6 col-md-3 text-center">
         <a href="/category/kitchenware" class="category-link text-decoration-none">
           <div class="category-img-wrap mb-3">
-            <img src="Kitchenware.jpg" alt="Kitchenware" class="category-img">
+            <img src="kitchenware.jpg" alt="Kitchenware" class="category-img">
           </div>
           <h4 class="category-title">Kitchenware</h4>
         </a>
       </div>
-      <!-- Festivals & Gifts 注意：文件名不要带&符号，建议改为 Festivals-Gifts.jpg -->
+      <!-- Festivals & Gifts -->
       <div class="col-6 col-md-3 text-center">
         <a href="/category/festivals-gifts" class="category-link text-decoration-none">
           <div class="category-img-wrap mb-3">
-            <img src="Festivals-Gifts.jpg" alt="Festivals & Gifts" class="category-img">
+            <img src="festivals-gifts.jpg" alt="Festivals & Gifts" class="category-img">
           </div>
           <h4 class="category-title">Festivals & Gifts</h4>
         </a>
@@ -629,7 +629,7 @@
       <div class="col-6 col-md-3 text-center">
         <a href="/category/toys" class="category-link text-decoration-none">
           <div class="category-img-wrap mb-3">
-            <img src="Toys.jpg" alt="Toys" class="category-img">
+            <img src="toys.jpg" alt="Toys" class="category-img">
           </div>
           <h4 class="category-title">Toys</h4>
         </a>
@@ -638,6 +638,38 @@
   </div>
 </section>
 
+<style>
+.category-section {
+  background-color: #f8f9fa;
+  border-top: 4px solid #7fcdc8; /* 顶部青绿色边框，匹配截图 */
+}
+.category-img-wrap {
+  overflow: hidden;
+  border-radius: 42%;
+  aspect-ratio: 1.4 / 1;
+  background-color: #e9ecef; /* 图片加载失败时的占位背景色 */
+  transition: transform 0.3s ease;
+}
+.category-img-wrap:hover {
+  transform: scale(1.05);
+}
+.category-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.category-title {
+  color: #4a4a4a;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 0.75rem;
+  font-family: Georgia, 'Times New Roman', serif; /* 衬线字体，匹配截图 */
+  transition: color 0.2s;
+}
+.category-link:hover .category-title {
+  color: #c49847;
+}
 <style>
 .category-section {
   background-color: #f8f3e9; /* 米奶油底色 */
