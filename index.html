@@ -546,19 +546,35 @@
     <a href="#">CONTACT US</a>
 </div>
             <style>
-.nav-menu a {
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.nav-link-item {
     text-decoration: none;
-    color: #333;
-    margin: 0 14px;
-    position: relative;
+    color: #222;
+    font-weight: 500;
 }
-/* 自定义下拉菜单：桃粉色边框，宽度适配内容，不撑满 */
-.custom-dropdown {
-    border: 2px solid #f8a8b8 !important; /* 桃粉色边框 */
-    width: auto !important;
-    min-width: unset !important;
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
 }
-</style>        
+
+/* ★ 下拉面板变粉色 */
+.dropdown-menu {
+    background-color: #ffc0cb;          /* 粉红 */
+    border: 1px solid #ffb6c1;          /* 边框同色系，可选 */
+    border-radius: 8px;
+}
+.dropdown-menu .dropdown-item {
+    color: #4a1a22;                     /* 深色字，保证粉色底上清晰可读 */
+}
+.dropdown-menu .dropdown-item:hover {
+    background-color: #ff9fb0;          /* 悬停加深，可选 */
+    color: #fff;
+}
+</style>
             <!-- 汉堡图标 -->
             <div class="hamburger d-md-none">
                 <i class="bi bi-list"></i>
