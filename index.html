@@ -507,6 +507,46 @@
         <div class="container d-flex justify-content-between align-items-center">
             <div class="logo-text">BIG LAZY</div>
             <!-- 桌面导航 -->
+<style>
+.nav-menu a {
+    position: relative;
+    text-decoration: none;
+    color: #222;
+    padding: 0 14px;
+    line-height: 48px;
+}
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #fada54;
+    transition: all 0.25s ease;
+    transform: translateX(-50%);
+}
+.nav-menu a:hover::after {
+    width: 70%;
+}
+/* 下拉菜单整体粉色背景 */
+.nav-menu .dropdown-menu {
+    margin-top: 0;
+    border-radius: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: #ffd6e2; /* 下拉框粉色底色 */
+    border: none;
+}
+/* 下拉选项：悬浮字体变紫色 */
+.nav-menu .dropdown-item {
+    color: #222;
+}
+.nav-menu .dropdown-item:hover {
+    background-color: transparent;
+    color: #992e99; /* 悬浮紫色文字 */
+}
+</style>
+
 <div class="nav-menu d-none d-md-block">
     <a href="#">NEW</a>
     <div class="dropdown d-inline-block">
@@ -518,29 +558,29 @@
         </ul>
     </div>
     <div class="dropdown d-inline-block">
-    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">KITCHENWARE</a>
-    <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Baking Tools</a></li>
-        <li><a class="dropdown-item" href="#">Kitchen Gadgets</a></li>
-        <li><a class="dropdown-item" href="#">Tableware</a></li>
-    </ul>
-</div>
+        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">KITCHENWARE</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Baking Tools</a></li>
+            <li><a class="dropdown-item" href="#">Kitchen Gadgets</a></li>
+            <li><a class="dropdown-item" href="#">Tableware</a></li>
+        </ul>
+    </div>
     <div class="dropdown d-inline-block">
-    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Gifts</a>
-    <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Christmas</a></li>
-        <li><a class="dropdown-item" href="#">Halloween</a></li>
-        <li><a class="dropdown-item" href="#">Birthday</a></li>
-    </ul>
-</div>
+        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Gifts</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Christmas</a></li>
+            <li><a class="dropdown-item" href="#">Halloween</a></li>
+            <li><a class="dropdown-item" href="#">Birthday</a></li>
+        </ul>
+    </div>
     <div class="dropdown d-inline-block">
-    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Toys</a>
-    <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Education Toys</a></li>
-        <li><a class="dropdown-item" href="#">Plush Toys</a></li>
-        <li><a class="dropdown-item" href="#">Others</a></li>
-    </ul>
-</div>
+        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Toys</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Education Toys</a></li>
+            <li><a class="dropdown-item" href="#">Plush Toys</a></li>
+            <li><a class="dropdown-item" href="#">Others</a></li>
+        </ul>
+    </div>
     <a href="#">ALL PRODUCTS</a>
     <a href="#">ABOUT US</a>
     <a href="#">CONTACT US</a>
